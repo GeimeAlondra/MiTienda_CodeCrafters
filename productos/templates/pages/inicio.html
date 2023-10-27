@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% load static %}
+{% block titulo %}
+<link rel="stylesheet" href="{% static 'css/index.css'%}"> 
+<title>Tienda Online</title> 
+{% endblock titulo %}
+
+{% block contenido %}
+    <div class='container'>
+        <div class='row text-center mt-5'>  
+            <h1 >Bienvenido a tienda Online</h1>     
+            <hr>
+           <img src="{% static 'img/1771222.jpg' %}" alt="Banner Promocional de Ford">
+
+        </div>
+    </div>
+
+{% endblock contenido %}
+
