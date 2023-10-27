@@ -8,7 +8,7 @@ class ProductosForm(forms.ModelForm):
       model = Producto
       fields = "__all__"
       widgets = {
-            'fecha': forms.DateInput(attrs={'type': 'date'})
+            'fechaVencimiento': forms.DateInput(attrs={'type': 'date'})
         }
       
    
