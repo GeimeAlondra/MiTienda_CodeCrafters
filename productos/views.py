@@ -12,7 +12,8 @@ def hola_mundo(request):
     return HttpResponse('<h1>Hola mundo desde Django</h1>')
 
 def inicio(request):
-    return render(request, 'pages/inicio.html')
+    productos = Producto.objects.all() 
+    return render(request, 'pages/inicio.html',{'productos': productos})
 
 def listado_productos(request):
     productos = Producto.objects.all()    
@@ -20,7 +21,7 @@ def listado_productos(request):
 
 def crearProducto(request):
     
-    formulario = ProductosForm(request.POST or None)
+    formulario = ProductosForm(request.POST or None,request.FILES or None)
     if formulario.is_valid():
         #producto = formulario.save
         formulario.save()
@@ -31,16 +32,17 @@ def crearProducto(request):
 def editarProducto(request ,id):
     producto = Producto.objects.get(id = id)
 
-    formulario = ProductosForm(request.POST or None,instance= producto)
+    formulario = ProductosForm(request.POST or None, request.FILES ,instance= producto)
     if formulario.is_valid():
         formulario.save()
         return redirect('productos')
     
     else:
        # Realiza la conversión de formato de fecha antes de pasarla al formulario.
-        fecha_en_formato_correcto1 = producto.fechaProduccion.strftime('%Y-%m-%d')
+        # fecha_en_formato_correcto1 = producto.fechaProduccion.strftime('%Y-%m-%d')
+        
         fecha_en_formato_correcto2 = producto.fechaVencimiento.strftime('%Y-%m-%d')
-        data = {'fechaProduccion': fecha_en_formato_correcto1, 'fechaVencimiento': fecha_en_formato_correcto2}  
+        data = { 'fechaVencimiento': fecha_en_formato_correcto2}  
         formulario = ProductosForm(instance=producto, initial=data)
         
     return render(request,'producto/editar.html',{'formulario': formulario})
