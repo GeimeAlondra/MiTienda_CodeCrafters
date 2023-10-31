@@ -21,7 +21,9 @@
                     <th scope="col">Nombre Producto</th>
                     <th scope="col">Existencias</th>
                     <th scope="col">Precio</th>
+                    <th scope="col">Imagenes</th>
                     <th scope="col">Acciones</th>
+                    
                   </tr>
                 </thead>
                 <tbody>
@@ -31,12 +33,19 @@
                         <td>{{producto.existencias}}</td>
                         <td>{{producto.precio}}</td>
                         <td>
+                          {% if producto.imagen%}
+                          <img src="{{producto.imagen.url}}" alt="" width="100px" height="100px">
+                          {% endif %}
+                        </td>
+                        <td>
                             
                             <a class="btn btn-outline-info" href="{% url 'editar_producto' producto.id %}" role="button"><i class="bi bi-pencil-fill"></i></a>
                             <a class="btn btn-outline-danger" href="{% url 'eliminar_producto' producto.id %}" role="button"><i class="bi bi-trash3"></i></a>
                         </td>
                       </tr>
+                     
                     {% endfor %}
+                    
                  
               </table>
         </div>
