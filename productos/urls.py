@@ -8,4 +8,7 @@ urlpatterns = [
     path('productos/editar/<int:id>', views.editarProducto,name="editar_producto"),
     path('productos/eliminar/<int:id>', views.eliminar_producto, name="eliminar_producto"),
     
+    #Contacto
+    path('Contactanos', views.crearContacto,name="contacto"),
+    
 ]
