@@ -12,11 +12,13 @@
     <header>
         <nav class="navbar navbar-expand-lg bg-dark border-bottom border-body" data-bs-theme="dark">
             <div class="container-fluid">
-              <a class="navbar-brand" href="#"><i class="bi bi-shop"></i></a>
+              <!-- <a class="navbar-brand" href="#"><i class="bi bi-shop"></i></a> -->
+              <span class="fs-5 d-none d-sm-inline"><img class="" src="{% static 'img/logo.png' %}" alt="" width="25px" height="25px"><strong class="text-white">&nbsp;CODECRAFTER</strong></span>
               <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
               </button>
-              <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <!-- <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                   <li class="nav-item">
                     <a class="nav-link active" aria-current="page" href="{% url 'inicio' %}">Inicio</a>
@@ -24,7 +26,9 @@
                   <li class="nav-item">
                     <a class="nav-link" href="{% url 'productos' %}">Productos</a>
                   </li>
-                </ul>
+                </ul>-->
+
+
                 <div class="dropdown mr-3">
                   <a href="#" class="d-flex align-items-center text-white text-decoration-none dropdown-toggle" id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false">
                       <img src="https://github.com/mdo.png" alt="hugenerd" width="30" height="30" class="rounded-circle">
@@ -39,11 +43,11 @@
                   </ul>
               </div>
               
-                <!-- <form class="d-flex" role="search">
+                 <!-- <form class="d-flex" role="search">
                   <label class="form-control">Josue Aaron Castillo</label>
                   <button class="btn btn-outline-danger" type="submit"><i class="bi bi-escape"></i></button>
-                </form> -->
-              </div>
+                </form>  -->
+              </div> 
             </div>
           </nav>
     </header>
@@ -57,7 +61,7 @@
                 <div class="d-flex flex-column align-items-center align-items-sm-start px-3 pt-2 text-white min-vh-100">
                   
                     <a href="/" class="d-flex align-items-center pb-3 mb-md-0 me-md-auto text-white text-decoration-none">
-                        <span class="fs-5 d-none d-sm-inline">Menu</span>
+                        
                     </a>
                     <ul class="nav nav-pills flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start" id="menu">
                         <li class="nav-item">
@@ -65,7 +69,7 @@
                                 <i class="fs-4 bi-house"></i> <span class="ms-1 d-none d-sm-inline">Home</span>
                             </a>
                         </li>
-                        <li>
+                        <!-- <li>
                             <a href="#submenu1" data-bs-toggle="collapse" class="nav-link px-0 align-middle">
                                 <i class="fs-4 bi-speedometer2"></i> <span class="ms-1 d-none d-sm-inline">Dashboard</span> </a>
                             <ul class="collapse show nav flex-column ms-1" id="submenu1" data-bs-parent="#menu">
@@ -76,23 +80,29 @@
                                     <a href="#" class="nav-link px-0"> <span class="d-none d-sm-inline">Contactos</span></a>
                                 </li>
                             </ul>
-                        </li>
-                        <!-- <li>
-                            <a href="#" class="nav-link px-0 align-middle">
-                                <i class="fs-4 bi-table"></i> <span class="ms-1 d-none d-sm-inline">Orders</span></a>
                         </li> -->
-                        <!-- <li>
+                        <li>
+                            <a href="{% url 'inicio' %}" class="nav-link px-0 align-middle">
+                                <i class="bi bi-tags"></i></i> <span class="ms-1 d-none d-sm-inline">Productos</span></a>
+                        </li> 
+                        <li>
+                            <a href="{% url 'contacto' %}" class="nav-link px-0 align-middle">
+                                <i class="bi bi-person-rolodex"></i></i> <span class="ms-1 d-none d-sm-inline">Contactanos</span></a>
+                        </li>
+                        
+                        
+                         <li>
                             <a href="#submenu2" data-bs-toggle="collapse" class="nav-link px-0 align-middle ">
-                                <i class="fs-4 bi-bootstrap"></i> <span class="ms-1 d-none d-sm-inline">Bootstrap</span></a>
+                                <i class="bi bi-database-fill-gear"></i><span class="ms-1 d-none d-sm-inline">Mantenimientos</span></a>
                             <ul class="collapse nav flex-column ms-1" id="submenu2" data-bs-parent="#menu">
                                 <li class="w-100">
-                                    <a href="#" class="nav-link px-0"> <span class="d-none d-sm-inline">Item</span> 1</a>
+                                    <a href="{% url 'productos' %}" class="nav-link px-0"> <span class="d-none d-sm-inline"><i class="bi bi-gear-fill"></i> Productos</span></a>
                                 </li>
-                                <li>
+                                <!-- <li>
                                     <a href="#" class="nav-link px-0"> <span class="d-none d-sm-inline">Item</span> 2</a>
-                                </li>
+                                </li> -->
                             </ul>
-                        </li> -->
+                        </li>
 
                         <!-- #### Aqui podemos cambiar o dar permiso de admin a los usuarios y lo ocultamos depende del usuario #### -->
                         <!-- <li>
@@ -115,7 +125,7 @@
                         </li> -->
                         <li>
                             <a href="#" class="nav-link px-0 align-middle">
-                                <i class="fs-4 bi-people"></i> <span class="ms-1 d-none d-sm-inline">Customers</span> </a>
+                                <i class="fs-4 bi-people"></i> <span class="ms-1 d-none d-sm-inline">ota opcion</span> </a>
                         </li>
                     </ul>
                     <hr>
