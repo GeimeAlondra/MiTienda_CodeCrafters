@@ -16,5 +16,5 @@ class Producto(models.Model):
 class Contacto(models.Model):
     id = models.AutoField(primary_key=True, auto_created=True)
     nombre = models.TextField(null=False, max_length=50,verbose_name="Nombre")
-    email = models.EmailField(null=False, max_length=50,verbose_name="Correo Electronico")
-    Mensaje = models.TextField(null=False, max_length=50,verbose_name="Mensaje")
+    email = models.EmailField(null=False, max_length=75,verbose_name="Correo Electronico")
+    Mensaje = models.TextField(null=False, max_length=150,verbose_name="Mensaje")

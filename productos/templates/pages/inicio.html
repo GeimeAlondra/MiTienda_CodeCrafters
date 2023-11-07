@@ -16,7 +16,7 @@
               <div class="col-sm-8">
                 <div id="carouselExampleIndicators" class="carousel slide " data-bs-ride="carousel">
                   
-                  <div class="carousel-inner">
+                  <div class="carousel-inner" >
                     <div class="carousel-item active">
                       <img src="{% static 'img/Carousel/govee.jpg' %}" class="d-block w-80" alt="...">
                     </div>
@@ -50,8 +50,17 @@
         </div>
 
         <!-- Seccion para crear un catalog de productos -->
-        <section class="mt-5 row justify-content-center ">
-          <div class="col-sm-8">
+        <section class="m-4 row justify-content-center ">
+          <div class="col">
+            <hr>
+            <div class="d-flex justify-content-center ">
+              <div class="col">
+                <div class="card mt-1 mb-1 bg-dark">
+                <h4 class="text-center text-white">Productos Mas Vendidos</h4>
+              </div>
+              </div>
+            </div>
+            <hr>
             <div class="row row-cols-1 row-cols-md-3 g-4">
               {% for producto in productos  %}
               <div class="col">
@@ -64,18 +73,21 @@
                     <p class="card-text">{{producto.descripcion}}</p>
                   </div>
                   <div class="card-footer">
-                    <small class="text-body-secondary">Fecha de Produccion: {{producto.fechaProduccion}}</small>
+                    <small class="text-body-secondary">Fecha de Produccion: {{producto.fechaProduccion}}
+                      <!-- #Se puede agregar un boton vista para abrir un modal y mostrar el producto con todo los datos# -->
+                    </small>
                   </div>
                 </div>
               </div>
               {% endfor %}
-             
-              
             </div>
-
+            <hr>
           </div>
       </section>
-       </div>
+
+      <!-- #probando modal para expandir el producto  -->
+      <!-- probando..... -->
+      <!-- fin modal -->
 {% endblock contenido %}
 
 

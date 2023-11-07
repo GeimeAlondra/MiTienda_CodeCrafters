@@ -1,5 +1,6 @@
 from django.shortcuts import redirect, render
-from django.http import HttpResponse
+from django.http import HttpResponse 
+from django.contrib import messages
 from .models import Producto
 from .forms import ProductosForm
 from. forms import ContactoForm
@@ -28,8 +29,9 @@ def crearProducto(request):
     if formulario.is_valid():
         #producto = formulario.save
         formulario.save()
+        messages.success(request,"Creado Satisfactoriamente")
         return redirect('productos')
-         
+        
     return render(request,'producto/crear.html', {'formulario': formulario})
 
 def editarProducto(request ,id):
@@ -38,6 +40,7 @@ def editarProducto(request ,id):
     formulario = ProductosForm(request.POST or None, request.FILES ,instance= producto)
     if formulario.is_valid():
         formulario.save()
+        messages.success(request,"Modificado Satisfactoriamente")
         return redirect('productos')
     
     else:
@@ -53,6 +56,7 @@ def editarProducto(request ,id):
 def eliminar_producto(request, id):
     producto = Producto.objects.get(id=id)
     producto.delete()
+    messages.success(request,"Eliminado Satisfactoriamente")
     return redirect('productos')
 
 #Para Contacto
