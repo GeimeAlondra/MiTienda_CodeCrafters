@@ -2,6 +2,7 @@ from django.shortcuts import redirect, render
 from django.http import HttpResponse
 from .models import Producto
 from .forms import ProductosForm
+from. forms import ContactoForm
 from datetime import datetime
 
 #existen 2 tipos de parametros que se usan en las peticiones http
@@ -15,6 +16,8 @@ def inicio(request):
     productos = Producto.objects.all() 
     return render(request, 'pages/inicio.html',{'productos': productos})
 
+
+#Para Productos
 def listado_productos(request):
     productos = Producto.objects.all()    
     return render (request,'producto/producto.html',{'productos': productos})
@@ -51,3 +54,15 @@ def eliminar_producto(request, id):
     producto = Producto.objects.get(id=id)
     producto.delete()
     return redirect('productos')
+
+#Para Contacto
+def inicio_contacto(request):
+    return render(request,'pages/contacto.html')
+
+def crearContacto(request):    
+    formulario = ContactoForm(request.POST or None)
+    if formulario.is_valid():
+        #producto = formulario.save
+        formulario.save()
+        return redirect('contacto')
+    return render(request,'pages/contacto.html', {'formulario': formulario})
