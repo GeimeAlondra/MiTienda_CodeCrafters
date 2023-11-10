@@ -56,6 +56,7 @@ def editarProducto(request ,id):
 def eliminar_producto(request, id):
     producto = Producto.objects.get(id=id)
     producto.delete()
+    
     messages.success(request,"Eliminado Satisfactoriamente")
     return redirect('productos')
 
