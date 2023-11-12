@@ -4,6 +4,7 @@ from .models import Producto
 from .forms import ProductosForm
 from. forms import ContactoForm
 from datetime import datetime
+from django.contrib import messages
 
 #existen 2 tipos de parametros que se usan en las peticiones http
 # 1- Request (lo que se envia)
@@ -28,6 +29,7 @@ def crearProducto(request):
     if formulario.is_valid():
         #producto = formulario.save
         formulario.save()
+        messages.success(request,"!!creado correctamente!!")
         return redirect('productos')
          
     return render(request,'producto/crear.html', {'formulario': formulario})
@@ -38,6 +40,7 @@ def editarProducto(request ,id):
     formulario = ProductosForm(request.POST or None, request.FILES ,instance= producto)
     if formulario.is_valid():
         formulario.save()
+        messages.success(request,"modificado correctamente")
         return redirect('productos')
     
     else:
@@ -53,6 +56,7 @@ def editarProducto(request ,id):
 def eliminar_producto(request, id):
     producto = Producto.objects.get(id=id)
     producto.delete()
+    messages.success(request,"modificado correctamente")
     return redirect('productos')
 
 #Para Contacto

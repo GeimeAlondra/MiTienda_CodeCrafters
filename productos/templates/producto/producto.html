@@ -2,7 +2,38 @@
 
 {% block titulo%} <title>Productos</title> {% endblock %}
 
+
 {% block contenido %}
+
+{% block js %}
+<script>
+  function myMessage(id) {
+      Swal.fire({
+          title: "Estas Seguro?",
+          text: "Esta accion no se puede retornar!",
+          icon: "warning",
+          showCancelButton: true,
+          confirmButtonColor: "#3085d6",
+          cancelButtonColor: "#d33",
+          confirmButtonText: "Si, eliminar!",
+          reverseButtons: true
+      }).then((result) => {
+          if (result.isConfirmed) {
+              Swal.fire({
+                  title: "Borrado!",
+                  text: "El producto selecionado a sido borrado.",
+                  icon: "success"
+              });
+              window.location.href = 'eliminar/'+id;
+          }
+      });
+  }
+</script>
+{% endblock %}
+
+
+
+
 <div class="container">
     <div class="row">
       
@@ -39,8 +70,9 @@
                         </td>
                         <td>
                             
+                            
                             <a class="btn btn-outline-info" href="{% url 'editar_producto' producto.id %}" role="button"><i class="bi bi-pencil-fill"></i></a>
-                            <a class="btn btn-outline-danger" href="{% url 'eliminar_producto' producto.id %}" role="button"><i class="bi bi-trash3"></i></a>
+                            <a class="btn btn-outline-danger" onclick="myMessage({{producto.id}})" href="#" role="button"><i class="bi bi-trash3"></i></a>
                         </td>
                       </tr>
                      
