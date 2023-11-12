@@ -8,7 +8,7 @@ class Producto(models.Model):
     fechaVencimiento = models.DateField(null=False,verbose_name="FechaVencimiento Producto")
     existencias = models.IntegerField(null=False,verbose_name="Existencias Producto")
     precio = models.DecimalField(null=False, decimal_places=2, max_digits=9,verbose_name="Precio Producto")
-    categoria = models.TextField(null=False, max_length=50,verbose_name="Categoria Producto")
+    categoria = models.TextField(null=False, max_length=75,verbose_name="Categoria Producto")
     proveedor = models.TextField(null=False, max_length=150,verbose_name="Proveedor Producto")
     imagen = models.ImageField(null=True,upload_to='img/productos')
     
