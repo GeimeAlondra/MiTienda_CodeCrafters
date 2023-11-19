@@ -55,7 +55,7 @@ def editarProducto(request ,id):
 def eliminar_producto(request, id):
     producto = Producto.objects.get(id=id)
     producto.delete()
-    messages.success(request,"modificado correctamente")
+    messages.success(request,"Eliminado correctamente")
     return redirect('productos')
 
 #Para Contacto
@@ -69,6 +69,20 @@ def crearContacto(request):
         formulario.save()
         return redirect('contacto')
     return render(request,'pages/contacto.html', {'formulario': formulario})
+
+def editarContacto(request ,id):
+    contacto = Contacto.objects.get(id = id)
+    formulario = ContactoForm(request.POST or None,instance= contacto)
+    if formulario.is_valid():
+        formulario.save()
+        return redirect('contactos')
+    return render(request,'producto/editar.html',{'formulario': formulario})
+
+def eliminar_contacto(request, id):
+    contacto = Contacto.objects.get(id=id)
+    contacto.delete()
+    messages.success(request,"Eliminado correctamente")
+    return redirect('contactos')
 
 def listado_contactos(request):
     contactos = Contacto.objects.all()    

@@ -11,6 +11,8 @@ urlpatterns = [
     #Contacto
     path('contactos/', views.listado_contactos,name="contactos"),
     path('Contactanos', views.crearContacto,name="contacto"),
+    path('contactos/editar/<int:id>', views.editarContacto, name="editar_contacto"),
+    path('contactos/eliminar/<int:id>', views.eliminar_contacto, name="eliminar_contacto"),
     
     #Acerca de
     path('acercaDe/', views.acerca_de, name="acercaDe"),

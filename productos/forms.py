@@ -3,10 +3,6 @@ from django import forms
 from .models import Producto
 from .models import Contacto
 
-
-
-
-
 class ProductosForm(forms.ModelForm):
     class Meta:
       # date = forms.DateField(widget=forms.TextInput(attrs={'class': 'form-control', 'type':'date'})),
