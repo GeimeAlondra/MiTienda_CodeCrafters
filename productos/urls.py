@@ -9,6 +9,9 @@ urlpatterns = [
     path('productos/eliminar/<int:id>', views.eliminar_producto, name="eliminar_producto"),
     
     #Contacto
+    path('contactos/', views.listado_contactos,name="contactos"),
     path('Contactanos', views.crearContacto,name="contacto"),
     
+    #Acerca de
+    path('acercaDe/', views.acerca_de, name="acercaDe"),
 ]

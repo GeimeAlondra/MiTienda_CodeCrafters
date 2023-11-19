@@ -1,6 +1,7 @@
 from django.shortcuts import redirect, render
 from django.http import HttpResponse
 from .models import Producto
+from .models import Contacto
 from .forms import ProductosForm
 from. forms import ContactoForm
 from datetime import datetime
@@ -17,19 +18,17 @@ def inicio(request):
     productos = Producto.objects.all() 
     return render(request, 'pages/inicio.html',{'productos': productos})
 
-
 #Para Productos
 def listado_productos(request):
     productos = Producto.objects.all()    
     return render (request,'producto/producto.html',{'productos': productos})
 
 def crearProducto(request):
-    
     formulario = ProductosForm(request.POST or None,request.FILES or None)
     if formulario.is_valid():
         #producto = formulario.save
         formulario.save()
-        messages.success(request,"!!creado correctamente!!")
+        messages.success(request,"!Producto guardado con exito!")
         return redirect('productos')
          
     return render(request,'producto/crear.html', {'formulario': formulario})
@@ -70,3 +69,11 @@ def crearContacto(request):
         formulario.save()
         return redirect('contacto')
     return render(request,'pages/contacto.html', {'formulario': formulario})
+
+def listado_contactos(request):
+    contactos = Contacto.objects.all()    
+    return render (request,'contacto/listaContactos.html',{'contactos': contactos})
+
+# Para Acerca de
+def acerca_de(request):
+    return render(request, 'pages/acercaDe.html')

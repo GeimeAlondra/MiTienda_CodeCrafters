@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block titulo %}
+<link rel="stylesheet" href="{% static 'css/index.css'%}"> 
+<title>CodeCrafters</title> 
+{% endblock titulo %}
+{% block contenido %}
+<div class='row  text-center mt-4'>
+<img src="{% static 'img/acercaDe.png' %}" alt="Banner Promocional de Ford">
+</div>
+{% endblock contenido %}
