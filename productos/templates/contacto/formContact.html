@@ -1,39 +1,4 @@
 
-<!-- <div class="card-outline text-center mb-3">
-    <h3>Formulario de contacto</h3>
-</div>
-<hr>
-<form enctype="multipart/form-data" method="post">
-    {% csrf_token %}
-    {% for campo in formulario %}
-    <div class="row">
-        
-        {% if campo.name == 'Mensaje' %}
-            <div class="col-sm-12 mb-3">
-                <div class="form-group">
-                    <label class="required-field" >¿Como podemos ayudarte?</label>
-                    <textarea class="form-control mt-2"  name="{{ campo.name }}" rows="4" placeholder="{{campo.name}}"></textarea>
-                </div>
-            </div>
-
-        {% else %}
-        <div class="col-sm-6 mb-3">
-            <div class="form-group">
-                <label class="required-field" >{{campo.label}}</label>
-                <input type="text" class="form-control" name="{{ campo.name }}" placeholder="{{ campo.name }}" value="{{ campo.value | default:'' }}">
-            </div>
-        </div>
-        {% endif %}
-        {% endfor %}
-
-        <div class="col-sm-12 mb-3">
-            <button type="submit" class="btn btn-primary"><i class="bi bi-send"></i> Enviar</button>
-            
-        </div>
-
-    </div>
-</form> -->
-
 <div class="card-outline text-center mb-3">
     <h3>Formulario de contacto</h3>
     
@@ -53,7 +18,7 @@
             </div>
 
         {% else %}
-        <div class="col-sm-6 mb-3">
+        <div class="col-sm-11 mb-3">
             <div class="form-group">
                 <label class="required-field" >{{campo.label}}</label>
                 <input type="text" class="form-control" name="{{ campo.name }}" placeholder="{{ campo.name }}" value="{{ campo.value | default:'' }}">

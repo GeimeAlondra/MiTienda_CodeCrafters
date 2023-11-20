@@ -7,18 +7,19 @@
   function myMessage(id) {
       Swal.fire({
           title: "¿Desea eliminar este producto?",
-          text: "Esta acción no se puede retornar!",
+          text: "¡Esta acción no se puede retornar!",
           icon: "warning",
           showCancelButton: true,
           confirmButtonColor: "#3085d6",
           cancelButtonColor: "#d33",
           confirmButtonText: "Si, eliminar",
+          cancelButtonText: "No, cancelar",
           reverseButtons: true
       }).then((result) => {
           if (result.isConfirmed) {
               Swal.fire({
                   title: "¡Borrado!",
-                  text: "El producto selecionado ha sido borrado.",
+                  text: "¡El producto ha sido borrado!",
                   icon: "success"
               });
               window.location.href = 'eliminar/'+id;
@@ -53,7 +54,7 @@
                     <tr>
                         <td>{{producto.nombre}}</td>
                         <td>{{producto.existencias}}</td>
-                        <td>{{producto.precio}}</td>
+                        <td>${{producto.precio}}</td>
                         <td>
                           {% if producto.imagen%}
                           <img src="{{producto.imagen.url}}" alt="" width="100px" height="100px">

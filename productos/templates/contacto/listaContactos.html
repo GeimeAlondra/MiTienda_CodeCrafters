@@ -7,18 +7,19 @@
   function myMessage(id) {
       Swal.fire({
           title: "¿Desea eliminar este contacto?",
-          text: "Esta acción no se puede retornar!",
+          text: "¡Esta acción no se puede retornar!",
           icon: "warning",
           showCancelButton: true,
           confirmButtonColor: "#3085d6",
           cancelButtonColor: "#d33",
           confirmButtonText: "Si, eliminar",
+          cancelButtonText: "No, cancelar",
           reverseButtons: true
       }).then((result) => {
           if (result.isConfirmed) {
               Swal.fire({
                   title: "¡Borrado!",
-                  text: "El contacto selecionado ha sido borrado.",
+                  text: "¡El contacto ha sido borrado!",
                   icon: "success"
               });
               window.location.href = 'eliminar/'+id;

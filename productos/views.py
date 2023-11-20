@@ -40,7 +40,7 @@ def editarProducto(request ,id):
     formulario = ProductosForm(request.POST or None, request.FILES ,instance= producto)
     if formulario.is_valid():
         formulario.save()
-        messages.success(request,"modificado correctamente")
+        messages.success(request,"¡El producto ha sido modificado!")
         return redirect('productos')
     
     else:
@@ -56,7 +56,7 @@ def editarProducto(request ,id):
 def eliminar_producto(request, id):
     producto = Producto.objects.get(id=id)
     producto.delete()
-    messages.success(request,"Eliminado correctamente")
+    messages.success(request,"¡El producto ha sido eliminado!")
     return redirect('productos')
 
 #Para Contacto
@@ -77,14 +77,14 @@ def editarContacto(request ,id):
     formulario = ContactoForm(request.POST or None,instance= contacto)
     if formulario.is_valid():
         formulario.save()
-        messages.success(request,"modificado correctamente")
+        messages.success(request,"¡El contacto ha sido modificado!")
         return redirect('contactos')
     return render(request,'producto/editar.html',{'formulario': formulario})
 
 def eliminar_contacto(request, id):
     contacto = Contacto.objects.get(id=id)
     contacto.delete()
-    messages.success(request,"Eliminado correctamente")
+    messages.success(request,"¡El contacto ha sido eliminado!")
     return redirect('contactos')
 
 def listado_contactos(request):
