@@ -16,4 +16,9 @@ urlpatterns = [
     
     #Acerca de
     path('acercaDe/', views.acerca_de, name="acercaDe"),
+    
+    #Carrito de compra
+    path('carrito/<int:id>', views.vistaCarrito, name="carrito"),
+    path('carrito/elimanar/<int:id>', views.vistaDeleteCarrito, name="carrito_delete"),
+    
 ]
