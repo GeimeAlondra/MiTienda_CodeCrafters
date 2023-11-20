@@ -15,7 +15,8 @@ def hola_mundo(request):
     return HttpResponse('<h1>Hola mundo desde Django</h1>')
 
 def inicio(request):
-    productos = Producto.objects.all() 
+    productos = Producto.objects.filter(precio__gt= 100)#con esto filtramos los productos __gt mayor que    
+    #descuento = (20 / 100) * productos.precio    
     return render(request, 'pages/inicio.html',{'productos': productos})
 
 #Para Productos
@@ -67,7 +68,8 @@ def crearContacto(request):
     if formulario.is_valid():
         #producto = formulario.save
         formulario.save()
-        return redirect('contacto')
+        messages.success(request,"Gracias por Contactarnos")
+        return redirect('inicio')
     return render(request,'pages/contacto.html', {'formulario': formulario})
 
 def editarContacto(request ,id):

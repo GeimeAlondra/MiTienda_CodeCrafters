@@ -2,11 +2,13 @@
 {% load static %}
 {% block titulo %}
 <link rel="stylesheet" href="{% static 'css/index.css'%}"> 
+<link rel="stylesheet" href="{% static 'css/style.css'%}">     
+
 <title>Tienda Online</title> 
 {% endblock titulo %}
 
 {% block contenido %}
-    <div class='container'>
+    <div class='container-fluid'>
         <div class='row  text-center mt-5 '>  
             <h1 >Bienvenido a tienda Online</h1>     
             <hr>
@@ -18,19 +20,19 @@
                   
                   <div class="carousel-inner">
                     <div class="carousel-item active">
-                      <img src="{% static 'img/Carousel/govee.jpg' %}" class="d-block w-80" alt="...">
+                      <img src="{% static 'img/Carousel/govee.jpg' %}" class="d-block w-100" alt="...">
                     </div>
                     <div class="carousel-item">
-                      <img src="{% static 'img/Carousel/monitorasus.jpg' %}" class="d-block w-80" alt="...">
+                      <img src="{% static 'img/Carousel/monitorasus.jpg' %}" class="d-block w-100" alt="...">
                     </div>
                     <div class="carousel-item">
-                      <img src="{% static 'img/Carousel/pcgamer.jpg' %}" class="d-block w-80" alt="...">
+                      <img src="{% static 'img/Carousel/pcgamer.jpg' %}" class="d-block w-100" alt="...">
                     </div>
                     <div class="carousel-item">
-                      <img src="{% static 'img/Carousel/playstation5.jpg' %}" class="d-block w-80" alt="...">
+                      <img src="{% static 'img/Carousel/playstation5.jpg' %}" class="d-block w-100" alt="...">
                     </div>
                     <div class="carousel-item">
-                      <img src="{% static 'img/Carousel/rtx4070.jpg' %}" class="d-block w-80" alt="...">
+                      <img src="{% static 'img/Carousel/rtx4070.jpg' %}" class="d-block w-100" alt="...">
                     </div>
                   </div>
                   <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
@@ -47,33 +49,56 @@
             </div>
             <!-- Fin Carousel  -->
           </div>
-        </div>
+        
 
         <!-- Seccion para crear un catalogo de productos -->
-        <section class="mt-5 row justify-content-center ">
-          <div class="col-sm-8">
-            <div class="row row-cols-1 row-cols-md-3 g-4">
-              {% for producto in productos  %}
-              <div class="col">
-                <div class="card h-100">
-                  <img src="{{producto.imagen.url}}" class="card-img-top" alt="..." width="180px" height="150px">
-                  <div class="card-body">
-                    <h5 class="card-title">{{producto.nombre}}</h5>
-                    <p class="card-text">{{producto.descripcion}}</p>
+        
+        
+          <div class="row row-cols-1 row-cols-xs-4 row-cols-sm-2 row-cols-lg-3 g-3 justify-content-center m-5">
+            {% for producto in productos %}
+            <div class="col hp">
+              
+              <div class="card h-100 shadow-sm">
+                <a href="#">
+                  <img src="{{producto.imagen.url}}" class="card-img-top" width="120" height="180" alt="product.title" />
+                </a>
+        
+                <div class="label-top shadow-sm">
+                  <a class="text-white" href="#">{{producto.nombre}}</a>
+                </div>
+                <div class="card-body">
+                  <div class="clearfix mb-3">
+                    <span class="float-start badge rounded-pill bg-secondary"><s>$ {{producto.precio}}</s></span>
+                    <span class="float-start badge rounded-pill bg-success">$ {{producto.descuento}}</span>
+        
+                    <span class="float-end"><a href="#" class="small text-muted text-uppercase aff-link">reviews</a></span>
                   </div>
-                  <div class="card-footer">
-                    <small class="text-body-secondary">Fecha de Produccion: {{producto.fechaProduccion}}</small>
+                  <h5 class="card-title">
+                    <a target="_blank" href="#">{{producto.descripcion}}</a>
+                  </h5>
+        
+                  <div class="d-grid gap-2 my-4">
+        
+                    <a href="#" class="btn btn-warning bold-btn">add to cart</a>
+        
+                  </div>
+                  <div class="clearfix mb-1">
+        
+                    <span class="float-start"><a href="#"><i class="fas fa-question-circle"></i></a></span>
+        
+                    <span class="float-end">
+                      <i class="far fa-heart" style="cursor: pointer"></i>
+        
+                    </span>
                   </div>
                 </div>
               </div>
-              {% endfor %}
-             
               
             </div>
-
-          </div>
-      </section>
+            
+            {% endfor %}
        </div>
+      </div>
 {% endblock contenido %}
 
 

@@ -3,25 +3,41 @@
 
 {% block titulo %}
 <link rel="stylesheet" href="{% static 'css/index.css'%}"> 
+<link rel="stylesheet" href="{% static 'css/contacto.css'%}"> 
 <title>CodeCrafters</title> 
 {% endblock titulo %}
 {% block contenido %}
-<div class="container" >
-    <div class="row">
-        <div class="col-lg-12">
-           <center>
-                <div class="card w-50 mt-5">
-                    <div class="card-header">
-                        <h4 class="card-title"><b>Llena el formulario para contactarnos</b></h4>
-                    </div>
-                    <div class="card-body">
-                        {% include 'producto/form.html' %}
-                    </div>
-                    <div class="card-footer text-muted">
-                        <a href="{% url 'productos' %}" class="btn btn-info">Volver <i class="bi bi-backspace"></i></a>
-                    </div>
-                </div>
-           </center>
+<div class="container mt-5">
+    <div class="contact__wrapper shadow-lg mt-n9">
+        <div class="row no-gutters">
+            <div class="col-lg-5 contact-info__wrapper gradient-brand-color p-5 order-lg-2">
+                <h3 class="color--white mb-5">Contactanos</h3>
+    
+                <ul class="contact-info__list list-style--none position-relative z-index-101">
+                    <li class="mb-4 pl-4">
+                        <span class="position-absolute"><i class="fas fa-envelope"></i></span> CodeCrafter@gmail.com
+                    </li>
+                    <li class="mb-4 pl-4">
+                        <span class="position-absolute"><i class="fas fa-phone"></i></span> (+503) 7654-4343
+                    </li>
+                    <li class="mb-4 pl-4">
+                        <span class="position-absolute"><i class="fas fa-map-marker-alt"></i></span> CodeCarfter Technologies
+                        <br> 2694 Queen City Rainbow Drive
+                        <br> Florida 99161
+    
+                        <div class="mt-3">
+                            <a href="https://www.google.com/maps" target="_blank" class="text-link link--right-icon text-white">Obtener Direccion <i class="link__icon fa fa-directions"></i></a>
+                        
+                        </div>
+                    </li>
+                </ul>
+            </div>
+    
+            <div class="col-lg-7 contact-form__wrapper p-5 order-lg-1">
+                {% include 'contacto/formContact.html' %}
+            </div>
+            <!-- End Contact Form Wrapper -->
+    
         </div>
     </div>
 </div>
