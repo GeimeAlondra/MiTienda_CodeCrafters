@@ -53,7 +53,47 @@
         <!-- Seccion para crear un catalogo de productos -->
         
           <div class="row row-cols-1 row-cols-xs-4 row-cols-sm-2 row-cols-lg-3 g-3 justify-content-center m-5">
-          
+            {% for producto in productos %}
+            <div class="col hp">
+              
+              <div class="card h-100 shadow-sm">
+                <a href="#">
+                  <img src="{{producto.imagen.url}}" class="card-img-top" width="120" height="180" alt="product.title" />
+                </a>
+        
+                <div class="label-top shadow-sm">
+                  <a class="text-white" href="#">{{producto.nombre}}</a>
+                </div>
+                <div class="card-body">
+                  <div class="clearfix mb-3">
+                    <span class="float-start badge rounded-pill bg-secondary">$ {{producto.precio}}</span>
+                    
+        
+                  <!--  <span class="float-end"><a href="#" class="small text-muted text-uppercase aff-link">reviews</a></span> -->
+                  </div>
+                  <h5 class="card-title">
+                    <a target="_blank" href="#">{{producto.descripcion}}</a>
+                  </h5>
+        
+                  <div class="d-grid gap-2 my-4">
+        
+                    <a href="{% url 'carrito' producto.id %}" class="btn btn-warning bold-btn">Añadir a carrito</a>
+        
+                  </div>
+                  <div class="clearfix mb-1">
+        
+                     <!--<span class="float-start"><a href="#"><i class="fas fa-question-circle"></i></a></span>
+        
+                    <span class="float-end">
+                      <i class="far fa-heart" style="cursor: pointer"></i>
+        
+                    </span> -->
+                  </div>
+                </div>
+              </div>
+              
+            </div>            
+            {% endfor %}
        </div>
       </div>
 {% endblock contenido %}
