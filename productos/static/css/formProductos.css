@@ -1,0 +1,29 @@
+.gradient-custom {
+    /* fallback for old browsers */
+    background: #f093fb;
+
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: -webkit-linear-gradient(to bottom right, rgb(154, 147, 251)ba(245, 87, 108, 1));
+
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background: linear-gradient(to bottom right, rgb(255, 255, 255), rgb(87, 90, 245))
+  }
+
+  .card-registration .select-input.form-control[readonly]:not([disabled]) {
+    font-size: 1rem;
+    line-height: 2.15;
+    padding-left: .75em;
+    padding-right: .75em;
+  }
+
+  .card-registration .select-arrow {
+    top: 13px;
+  }
+
+  .redondoborde {
+    width: 300px; /* Puedes ajustar el ancho según tus necesidades */
+    padding: 20px;
+    background-color: #f0f0f0;
+    border-radius: 10px; /* Este es el valor que redondea los bordes */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra opcional para resaltar el card */
+}

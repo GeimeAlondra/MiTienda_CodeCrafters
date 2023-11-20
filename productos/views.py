@@ -77,6 +77,7 @@ def editarContacto(request ,id):
     formulario = ContactoForm(request.POST or None,instance= contacto)
     if formulario.is_valid():
         formulario.save()
+        messages.success(request,"modificado correctamente")
         return redirect('contactos')
     return render(request,'producto/editar.html',{'formulario': formulario})
 

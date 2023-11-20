@@ -3,10 +3,160 @@
 
 {% block titulo %}
 <link rel="stylesheet" href="{% static 'css/index.css'%}"> 
+<link rel="stylesheet" href="{% static 'css/acercade.css'%}"> 
 <title>CodeCrafters</title> 
 {% endblock titulo %}
 {% block contenido %}
-<div class='row  text-center mt-4'>
+<!-- <div class='row  text-center mt-4'>
 <img src="{% static 'img/acercaDe.png' %}" alt="Banner Promocional de Ford">
+</div> -->
+<div class="d-flex justify-content-center mt-5 ">
+    <div class="card" style="width: 100rem;">
+        <div class="card-body">
+            <div class=" text-center mt-5">
+                <div class="row">
+                  <div class="col">
+                    <img src="{% static 'img/1.jpg' %}" alt="" width="600" height="300">
+                  </div>
+                  <div class="col">
+                    <p class="fs-4 mt-1 ">En nuestra webstore ponemos a disposición cientos de productos tecnológicos de fácil ubicación para ahorrarte tiempo. Un proceso de pago asistido de fácil comprensión para que tu experiencia de compra sea fácil y rápida. Además de ofrecerte novedades de productos cada semana y oportunidades de ofertas especiales de la semana o del mes.</p>
+                    <a type="button" href="{% url 'inicio' %}" class="btn btn-outline-primary " style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .90rem;">Ver Productos...<i class="bi bi-arrow-right"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+        
+              <div class=" text-center mt-5 mb-5">
+                <div class="row">
+                  <div class="col m">
+                    <h3>Deseas unirte a nuestro equipo de trabajo?</h3>
+                    <p class="fs-4 mt-1 ">Si deseas ser parte de nuestros procesos de selección de personal, te invitamos a que nos envies tu CV y en el futuro puedas ser parte de nuestra fuerza laboral.</p>
+                    <a type="button" class="btn btn-outline-primary" href="#" style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .90rem;">Envianos tu CV...<i class="bi bi-arrow-right"></i>
+                    </a>
+                  </div>
+                  <div class="col">
+                    
+                    <img src="{% static 'img/2.jfif' %}" alt="" width="600" height="300">
+                  </div>
+                </div>
+              </div>            
+        </div>
+      </div>
+</div>
+
+
+<!-- For demo purpose -->
+<div class="container py-5">
+    <div class="row text-center text-white">
+        <div class="col-lg-8 mx-auto">
+            <h1 class="display-3">Team CodeCrafters</h1>
+            <hr>
+            <p class="lead mb-0">¡Explora con nosotros el emocionante mundo del desarrollo web! Estamos listos para convertir tus ideas en una realidad digital impactante. ¡Bienvenido a la próxima generación de experiencias web!</p>
+            <!-- <p class="lead">Snippet by<a href="https://bootstrapious.com/snippets" class="text-white">
+                <u>Bootstrapious</u></a>
+            </p> -->
+        </div>
+    </div>
+</div><!-- End -->
+
+
+<div class="container">
+    <div class="row text-center">
+
+        <!-- Team item -->
+        <div class="col-xl-3 col-sm-6 mb-5">
+            <div class="bg-white rounded shadow-sm py-5 px-4"><img src="{% static 'img/ingenieros/126340374.png' %}" alt="" width="100" class="img-fluid rounded-circle mb-3 img-thumbnail shadow-sm">
+                <h5 class="mb-0">Sonia Elizabeth Abrego Nuñez</h5><span class="small text-uppercase text-muted ">Diseñadora</span>
+                <ul class="social mb-0 list-inline mt-3">
+                    <li class="list-inline-item"><a href="#" class="social-link"><i class="fa fa-facebook-f"></i></a></li>
+                    <li class="list-inline-item"><a href="#" class="social-link"><i class="fa fa-twitter"></i></a></li>
+                    <li class="list-inline-item"><a href="#" class="social-link"><i class="fa fa-instagram"></i></a></li>
+                    <li class="list-inline-item"><a href="https://github.com/elizzzAb" target="_blank" class="social-link"><i class="fa-brands fa-github"></i></a></li>
+                </ul>
+            </div>
+        </div><!-- End -->
+
+        <!-- Team item -->
+        <div class="col-xl-3 col-sm-6 mb-5">            
+            <div class="bg-white rounded shadow-sm py-5 px-4"><img src="{% static 'img/ingenieros/126534976.jfif' %}" alt="" width="100" class="img-fluid rounded-circle mb-3 img-thumbnail shadow-sm">
+                <h5 class="mb-0">Luis Miguel Abrego Sanchez</h5><span class="small text-uppercase text-muted">QA-Testing</span>
+                <ul class="social mb-0 list-inline mt-3">
+                    <li class="list-inline-item"><a href="#" class="social-link"><i class="fa fa-facebook-f"></i></a></li>
+                    <li class="list-inline-item"><a href="#" class="social-link"><i class="fa fa-twitter"></i></a></li>
+                    <li class="list-inline-item"><a href="#" class="social-link"><i class="fa fa-instagram"></i></a></li>
+                    <li class="list-inline-item"><a href="https://github.com/LuisMi1707" target="_blank" class="social-link"><i class="fa-brands fa-github"></i></a></li>
+                    
+                </ul>
+            </div>
+        </div><!-- End -->
+
+        <!-- Team item -->
+        <div class="col-xl-3 col-sm-6 mb-5">
+            <div class="bg-white rounded shadow-sm py-5 px-4"><img src="{% static 'img/ingenieros/126539753.png' %}" alt="" width="100" class="img-fluid rounded-circle mb-3 img-thumbnail shadow-sm">
+                <h5 class="mb-0">Wendy Daniela Ayala Ayala</h5><span class="small text-uppercase text-muted">QA-Testing</span>
+                <ul class="social mb-0 list-inline mt-3">
+                    <li class="list-inline-item"><a href="#" class="social-link"><i class="fa fa-facebook-f"></i></a></li>
+                    <li class="list-inline-item"><a href="#" class="social-link"><i class="fa fa-twitter"></i></a></li>
+                    <li class="list-inline-item"><a href="#" class="social-link"><i class="fa fa-instagram"></i></a></li>
+                    <li class="list-inline-item"><a href="https://github.com/wendy97531234" target="_blank" class="social-link"><i class="fa-brands fa-github"></i></a></li>
+                    
+                </ul>
+            </div>
+        </div><!-- End -->
+
+        <!-- Team item -->
+        <div class="col-xl-3 col-sm-6 mb-5">
+            <div class="bg-white rounded shadow-sm py-5 px-4"><img src="{% static 'img/ingenieros/126531292.jfif' %}" alt="" width="100" class="img-fluid rounded-circle mb-3 img-thumbnail shadow-sm">
+                <h5 class="mb-0">Josue Aaron Castillo Valdiviezo</h5><span class="small text-uppercase text-muted">backend-developer</span>
+                <ul class="social mb-0 list-inline mt-3">
+                    <li class="list-inline-item"><a href="#" class="social-link"><i class="fa fa-facebook-f"></i></a></li>
+                    <li class="list-inline-item"><a href="#" class="social-link"><i class="fa fa-twitter"></i></a></li>
+                    <li class="list-inline-item"><a href="#" class="social-link"><i class="fa fa-instagram"></i></a></li>
+                    <li class="list-inline-item"><a href="https://github.com/JosueCast" target="_blank" class="social-link"><i class="fa-brands fa-github"></i></a></li>
+                    
+                </ul>
+            </div>
+        </div><!-- End -->
+        <!-- Team item -->
+        <div class="col-xl-3 col-sm-6 mb-5">
+            <div class="bg-white rounded shadow-sm py-5 px-4"><img src="{% static 'img/ingenieros/105683683.jfif' %}" alt="" width="100" class="img-fluid rounded-circle mb-3 img-thumbnail shadow-sm">
+                <h5 class="mb-0">Geime Alondra Lopez Lopez</h5><span class="small text-uppercase text-muted">backend-developer</span>
+                <ul class="social mb-0 list-inline mt-3">
+                    <li class="list-inline-item"><a href="#" class="social-link"><i class="fa fa-facebook-f"></i></a></li>
+                    <li class="list-inline-item"><a href="#" class="social-link"><i class="fa fa-twitter"></i></a></li>
+                    <li class="list-inline-item"><a href="#" class="social-link"><i class="fa fa-instagram"></i></a></li>
+                    <li class="list-inline-item"><a href="https://github.com/GeimeAlondra" target="_blank" class="social-link"><i class="fa-brands fa-github"></i></a></li>
+                    
+                </ul>
+            </div>
+        </div><!-- End -->
+        <!-- Team item -->
+        <div class="col-xl-3 col-sm-6 mb-5">
+            <div class="bg-white rounded shadow-sm py-5 px-4"><img src="{% static 'img/ingenieros/126535792.jfif' %}" alt="" width="100" class="img-fluid rounded-circle mb-3 img-thumbnail shadow-sm">
+                <h5 class="mb-0">Bryan Alexander Pineda Chavez</h5><span class="small text-uppercase text-muted">Frontend-developer</span>
+                <ul class="social mb-0 list-inline mt-3">
+                    <li class="list-inline-item"><a href="#" class="social-link"><i class="fa fa-facebook-f"></i></a></li>
+                    <li class="list-inline-item"><a href="#" class="social-link"><i class="fa fa-twitter"></i></a></li>
+                    <li class="list-inline-item"><a href="#" class="social-link"><i class="fa fa-instagram"></i></a></li>
+                    <li class="list-inline-item"><a href="https://github.com/alexander9753100" target="_blank" class="social-link"><i class="fa-brands fa-github"></i></a></li>
+                    
+                </ul>
+            </div>
+        </div><!-- End -->
+
+        <!-- Team item -->
+        <div class="col-xl-3 col-sm-6 mb-5">
+            <div class="bg-white rounded shadow-sm py-5 px-4"><img src="{% static 'img/ingenieros/126531322.jfif' %}" alt="" width="100" class="img-fluid rounded-circle mb-3 img-thumbnail shadow-sm">
+                <h5 class="mb-0">Bryan Edenilson Quintanilla </h5><span class="small text-uppercase text-muted">Frontend-developer</span>
+                <ul class="social mb-0 list-inline mt-3">
+                    <li class="list-inline-item"><a href="#" class="social-link"><i class="fa fa-facebook-f" ></i></a></li>
+                    <li class="list-inline-item"><a href="#" class="social-link"><i class="fa fa-twitter"></i></a></li>
+                    <li class="list-inline-item"><a href="#" class="social-link"><i class="fa fa-instagram"></i></a></li>
+                    <li class="list-inline-item"><a href="https://github.com/bryan-br0n" target="_blank" class="social-link"><i class="fa-brands fa-github"></i></a></li>
+                    
+                </ul>
+            </div>
+        </div><!-- End -->
+    </div>
 </div>
 {% endblock contenido %}

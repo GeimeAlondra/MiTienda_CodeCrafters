@@ -1,40 +1,35 @@
+<div class="card-outline text-center mb-3">
+    <h3>Formulario de contacto</h3>
 
+</div>
 <form enctype="multipart/form-data" method="post">
     {% csrf_token %}
     {% for campo in formulario %}
-    <div class="mb-3">
+    <div class=" row mb-3">
         <label class="form-label">{{campo.label}}</label>
-        {% if campo.name == 'fechaProduccion' %}  {# Comprobar si el campo es 'fecha' #}
-            <input 
-                type="date"  
-                class="form-control"
-                name="{{ campo.name }}"
-                placeholder="{{ campo.label }}"
-                value="{{ campo.value | default:'' }}"
-            >
-        {% elif campo.name == 'fechaVencimiento' %}
-                <input 
-                type="date"  
-                class="form-control"
-                name="{{ campo.name }}"
-                placeholder="{{ campo.label }}"
-                value="{{ campo.value | default:'' }}"
-            >
+       
+            {% if campo.name == 'fechaProduccion' %} {# Comprobar si el campo es 'fecha' #}
+            <div class="col">
+
+                <input type="date" class="form-control form-control-lg" name="{{ campo.name }}"
+                    placeholder="{{ campo.label }}" value="{{ campo.value | default:'' }}">
+            </div>
+            {% elif campo.name == 'fechaVencimiento' %}
+            <div class="col">
+
+                <input type="date" class="form-control form-control-lg" name="{{ campo.name }}"
+                    placeholder="{{ campo.label }}" value="{{ campo.value | default:'' }}">
+            </div>
+        
         {% else %}
-            <input 
-                type="{{ campo.field.widget.input_type }}"
-                class="form-control"
-                name="{{ campo.name }}"
-                placeholder="{{ campo.label }}"
-                value="{{ campo.value | default:'' }}"
-            >
+        <div class="col">
+            <input type="{{ campo.field.widget.input_type }}" class="form-control form-control-lg"
+                name="{{ campo.name }}" placeholder="{{ campo.label }}" value="{{ campo.value | default:'' }}">
+        </div>
         {% endif %}
-          
+
     </div>
     {% endfor %}
-   
+
     <button type="submit" class="btn btn-success">Guardar <i class="bi bi-floppy"></i></button>
 </form>
- 
-
- 
