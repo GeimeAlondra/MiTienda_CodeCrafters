@@ -48,7 +48,7 @@
             <div class="col-sm-12 mb-3">
                 <div class="form-group">
                     <label class="required-field" >¿Como podemos ayudarte?</label>
-                    <textarea class="form-control mt-2"  name="{{ campo.name }}" rows="4" placeholder="{{campo.name}}"></textarea>
+                    <textarea class="form-control mt-2"  name="{{ campo.name }}" rows="4" placeholder="{{campo.name}}" value="">{{ campo.value | default:'' }}</textarea>
                 </div>
             </div>
 

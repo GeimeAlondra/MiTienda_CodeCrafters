@@ -79,7 +79,7 @@ def editarContacto(request ,id):
         formulario.save()
         messages.success(request,"modificado correctamente")
         return redirect('contactos')
-    return render(request,'producto/editar.html',{'formulario': formulario})
+    return render(request,'contacto/editar.html',{'formulario': formulario})
 
 def eliminar_contacto(request, id):
     contacto = Contacto.objects.get(id=id)
