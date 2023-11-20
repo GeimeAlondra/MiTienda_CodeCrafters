@@ -79,7 +79,7 @@ def editarContacto(request ,id):
         formulario.save()
         messages.success(request,"¡El contacto ha sido modificado!")
         return redirect('contactos')
-    return render(request,'producto/editar.html',{'formulario': formulario})
+    return render(request,'contacto/editar.html',{'formulario': formulario})
 
 def eliminar_contacto(request, id):
     contacto = Contacto.objects.get(id=id)
@@ -94,3 +94,21 @@ def listado_contactos(request):
 # Para Acerca de
 def acerca_de(request):
     return render(request, 'pages/acercaDe.html')
+
+#para Carrito de compra
+carrito = []
+def vistaCarrito(request,id): 
+    producto = Producto.objects.get(id = id)
+    if(producto in carrito):
+        pass
+    else:
+        carrito.append(producto)
+    return render(request,'carrito/carrito.html',{'producto':carrito})
+
+def vistaDeleteCarrito(request,id):
+    producto = Producto.objects.get(id = id)
+    if producto in carrito:
+        indice = carrito.index(producto)
+        carrito.pop(indice)
+    messages.success(request,"Eliminado correctamente")
+    return render(request,'carrito/carrito.html',{'producto':carrito})

@@ -66,8 +66,8 @@
                 </div>
                 <div class="card-body">
                   <div class="clearfix mb-3">
-                    <span class="float-start badge rounded-pill bg-secondary"><s>$ {{producto.precio}}</s></span>
-                    <span class="float-start badge rounded-pill bg-success">$ {{producto.descuento}}</span>
+                    <span class="float-start badge rounded-pill bg-secondary">$ {{producto.precio}}</span>
+                    
         
                     <span class="float-end"><a href="#" class="small text-muted text-uppercase aff-link">reviews</a></span>
                   </div>
@@ -77,7 +77,7 @@
         
                   <div class="d-grid gap-2 my-4">
         
-                    <a href="#" class="btn btn-warning bold-btn">add to cart</a>
+                    <a href="{% url 'carrito' producto.id %}" class="btn btn-warning bold-btn">add to cart</a>
         
                   </div>
                   <div class="clearfix mb-1">
